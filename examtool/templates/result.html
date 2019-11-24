@@ -1,0 +1,6 @@
+{% extends 'layout/layout.html' %}
+
+{% block content %}
+    <div id="result">{{ result }}です。</div>
+    <div id="replay"><a href="{% url 'question' %}">もう一度</a></div>
+{% endblock %}

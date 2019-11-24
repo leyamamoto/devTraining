@@ -1,0 +1,37 @@
+{% extends 'layout/layout.html' %}
+
+{% block content %}
+    <div id="question">
+        <form action="{% url 'answer' %}" method="post" id="form1">
+            {% csrf_token %}
+            <div id="mondaititle">問題</div>
+            <div id="mondai">{{ question }}</div>
+            <div class="sentakushi"><button id="answer1" name="answer1" class="btn btn-danger">1</button>：{{ answer1 }}</div>
+            <div class="sentakushi"><button id="answer2" name="answer2" class="btn btn-danger">2</button>：{{ answer2 }}</div>
+            <div class="sentakushi"><button id="answer3" name="answer3" class="btn btn-danger">3</button>：{{ answer3 }}</div>
+            <div class="sentakushi"><button id="answer4" name="answer4" class="btn btn-danger">4</button>：{{ answer4 }}</div>
+            <input type="hidden" id="answerid" name="answerid" value="{{ pid }}">
+            <input type="hidden" id="kaitou" name="kaitou" value="">
+        </form>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $('#answer1').click( function(){
+                $('#kaitou').val('1');
+                $('#form1').submit();
+            });
+            $('#answer2').click( function(){
+                $('#kaitou').val('2');
+                $('#form1').submit();
+            });
+            $('#answer3').click( function(){
+                $('#kaitou').val('3');
+                $('#form1').submit();
+            });
+            $('#answer4').click( function(){
+                $('#kaitou').val('4');
+                $('#form1').submit();
+            });
+        });
+    </script>
+{% endblock %}

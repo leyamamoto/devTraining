@@ -1,0 +1,21 @@
+{%  load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="{% static 'examtool/css/bootstrap.css' %}" />
+        <link rel="stylesheet" href="{% static 'examtool/css/style.css' %}" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <div id="head">
+            <h1>試験問題チャレンジ！</h1>
+            <h3>2019.11.23 開発合宿版</h3>
+        </div>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+    <script type="text/javascript" href="{% static 'examtool/js/bootstrap.min.js' %}"></script>
+</html>
